@@ -24,14 +24,23 @@ matplotlib.pyplot – to visualize images
 os, string – for basic file and character operations
 
 #Algorithm & Deployment (Step-by-Step)
+
 Load the image using OpenCV
+
 Convert image to RGB and display
+
 Read and store ASCII values of the message and key
+
 Encrypt: XOR each character's ASCII value with the corresponding key character
+
 Modify image pixels accordingly
+
 Save the encrypted image
+
 Decrypt: Reverse the XOR process using the same key
+
 Retrieve the original hidden message
+
 
 🔐 Steganography Using XOR in Image Pixels
 
