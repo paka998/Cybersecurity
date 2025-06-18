@@ -1,19 +1,20 @@
-🔒 Title:
+🔒 **Title:**
 Secure Text Hiding in Images Using Steganography and XOR Encryption
 
-🧩 Problem Statement:
+🧩 **Problem Statement:**
 Steganography is the art of hiding information within other seemingly harmless data.
 In this project, we aim to securely embed a secret text into an image file in such a way that the existence of the hidden message is imperceptible to the human eye. 
 This technique ensures an additional layer of security where communication does not raise suspicion. 
 Traditional encryption methods make data unreadable, but steganography hides the fact that communication is even taking place. 
 The objective is to encrypt the text using XOR operation and modify specific pixels in an image accordingly, and then to decrypt it back successfully.
 
-#System Approach
+**System Approach**
 
-1.System Requirements:
+**1.System Requirements:**
+
 Python 3.8+, Jupyter/Colab, OpenCV, NumPy, Matplotlib
 
-2.Libraries Required:
+**2.Libraries Required:**
 
 cv2 (OpenCV) – for image processing
 
@@ -23,7 +24,7 @@ matplotlib.pyplot – to visualize images
 
 os, string – for basic file and character operations
 
-#Algorithm & Deployment (Step-by-Step)
+**Algorithm & Deployment (Step-by-Step)**
 
 Load the image using OpenCV
 
@@ -42,12 +43,16 @@ Decrypt: Reverse the XOR process using the same key
 Retrieve the original hidden message
 
 
-🔐 Steganography Using XOR in Image Pixels
+🔐 **Steganography Using XOR in Image Pixels**
 
 import cv2
+
 import numpy as np
+
 import os
+
 import matplotlib.pyplot as plt
+
 import String
 
 # ASCII mapping dictionaries
@@ -119,7 +124,7 @@ for i in range(l):
 
 print("Decrypted text:", decrypt)
 
-#Conclusion
+**Conclusion**
 
 This project successfully demonstrates a basic image steganography technique using XOR-based encryption. 
 The hidden text was embedded into specific image pixels and was later retrieved with 100% accuracy.
