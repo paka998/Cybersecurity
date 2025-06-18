@@ -9,6 +9,7 @@ Traditional encryption methods make data unreadable, but steganography hides the
 The objective is to encrypt the text using XOR operation and modify specific pixels in an image accordingly, and then to decrypt it back successfully.
 
 #System Approach
+
 1.System Requirements:
 Python 3.8+, Jupyter/Colab, OpenCV, NumPy, Matplotlib
 
