@@ -57,69 +57,100 @@ import String
 
 # ASCII mapping dictionaries
 d = {chr(i): i for i in range(255)}
+
 c = {i: chr(i) for i in range(255)}
 
 # Load the image
 image_path = "your_image.png"  # Change to your image path
+
 x = cv2.imread(image_path)
+
 x_rgb = cv2.cvtColor(x, cv2.COLOR_BGR2RGB)
 
 plt.imshow(x_rgb)
+
 plt.axis('off')
+
 plt.title("Original Image")
+
 plt.show()
 
 print("Image shape (Height, Width, Channels):", x.shape)
 
 # Input key and text to hide
 key = "216416624"
+
 text = "seetha"
 
 # Convert to ASCII values
 text_ascii = [d[ch] for ch in text]
+
 key_ascii = [d[ch] for ch in key]
 
 # Encrypt and modify pixel values
 x_enc = x.copy()
+
 n = m = z = kl = 0
+
 l = len(text)
 
 for i in range(l):
+
     orig_val = x_enc[n, m, z]
+    
     new_val = text_ascii[i] ^ key_ascii[kl]
+    
     x_enc[n, m, z] = new_val
+    
     print(f"Embedding '{text[i]}' (ASCII {text_ascii[i]}) XOR '{key[kl]}' (ASCII {key_ascii[kl]}) = {new_val} at pixel({n},{m},{z})")
     
     n += 1
+    
     m += 1
+    
     m = (m + 1) % 3
+    
     z = (z + 1) % 3
+    
     kl = (kl + 1) % len(key)
 
 # Save the encrypted image
 cv2.imwrite("encrypted_image.png", x_enc)
+
 print("Encrypted image saved as 'encrypted_image.png'")
 
 # Display encrypted image
 plt.imshow(cv2.cvtColor(x_enc, cv2.COLOR_BGR2RGB))
+
 plt.axis('off')
+
 plt.title("Encrypted Image")
+
 plt.show()
 
 # Decryption process
 decrypt = ""
+
 n = m = z = kl = 0
 
 for i in range(l):
+
     val = x_enc[n, m, z]
+    
     orig_char = c[val ^ key_ascii[kl]]
+    
     decrypt += orig_char
+    
     print(f"Decrypting pixel({n},{m},{z}): {val} XOR {key_ascii[kl]} = {val ^ key_ascii[kl]} -> '{orig_char}'")
     
     n += 1
+    
     m += 1
+    
     m = (m + 1) % 3
+    
     z = (z + 1) % 3
+    
     kl = (kl + 1) % len(key)
 
 print("Decrypted text:", decrypt)
@@ -127,8 +158,12 @@ print("Decrypted text:", decrypt)
 **Conclusion**
 
 This project successfully demonstrates a basic image steganography technique using XOR-based encryption. 
+
 The hidden text was embedded into specific image pixels and was later retrieved with 100% accuracy.
+
 The method ensures visual integrity of the image while maintaining data secrecy. 
+
 Some challenges include maintaining pixel integrity and scaling for larger messages. 
+
 Future improvements could involve more complex encoding schemes and use of multiple image formats.
 
