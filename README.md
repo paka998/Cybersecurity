@@ -14,9 +14,13 @@ The objective is to encrypt the text using XOR operation and modify specific pix
 Python 3.8+, Jupyter/Colab, OpenCV, NumPy, Matplotlib
 
 2.Libraries Required:
+
 cv2 (OpenCV) – for image processing
+
 numpy – for numerical operations
+
 matplotlib.pyplot – to visualize images
+
 os, string – for basic file and character operations
 
 #Algorithm & Deployment (Step-by-Step)
