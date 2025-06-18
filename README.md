@@ -1,7 +1,7 @@
-#Title
-Data Hiding in Images: A Steganographic Approach Using XOR
+🔒 Title:
+Secure Text Hiding in Images Using Steganography and XOR Encryption
 
-#Problem Statement
+🧩 Problem Statement:
 Steganography is the art of hiding information within other seemingly harmless data.
 In this project, we aim to securely embed a secret text into an image file in such a way that the existence of the hidden message is imperceptible to the human eye. 
 This technique ensures an additional layer of security where communication does not raise suspicion. 
